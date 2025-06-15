@@ -3,7 +3,7 @@
 
 # Hands-On LAB 02 - Executando comandos pelo Notebook
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, Dask, DataViz, SQL end-point).
+Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, DataViz, Genie).
  </br> </br>
 
 ## Objetivos do Exercício
@@ -26,17 +26,13 @@ Na janela de importação, clique na opção "**URL**".
 No campo texto da URL, digite o endereço do LINK destacado abaixo:
 
 ``` html
-
-
 https://github.com/Databricks-BR/lab_sql/blob/main/02_LAB_Notebook/lab02_01_carga_csv.ipynb
-
-
 ```
 Conforme a figura abaixo:
 </br></br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab02_2.png" style="height: 250px;">>
 </br></br>
-* Altere a variável com o nome do seu login  (SCHEMA), conforme ficgura abaixo.
+* Altere a variável com o nome do seu login  (SCHEMA), conforme figura abaixo.
 * Não esqueça de tirar o caracter "#" (jogo da velha) da frente da linha.
 * Verifique se o Cluster (máquina virtual que executará o processo) está Atachada (barra superior ao lado do botão "Run All"). 
 </br></br>

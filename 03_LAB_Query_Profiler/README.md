@@ -3,7 +3,7 @@
 
 # Hands-On LAB 03 - Explorando o Query Profiler 
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, Dask, DataViz, SQL end-point).
+Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, DataViz, Genie).
 
 
 ## Objetivos do Exercício
@@ -19,46 +19,39 @@ Vamos utilizar o "Editor SQL".
 ## Exercício 03.01 - Criação da Query
 
 ``` sql
-USE CATALOG academy;
-
-USE <seu_nome_login>;
-
-CREATE OR REPLACE TABLE silver_empresas AS
+CREATE OR REPLACE TABLE big_table AS
 SELECT 
-  est.cnpj_basico AS cnpj_basico,
-  matriz_filial AS nome_matriz,
-  nome_fantasia AS nome_fantasia_empresa,
-  razao_social AS nome_razao_social,
-  codigo_situacao_cadastral AS cod_situacao_cadastral,
-  data_situacao_cadastral AS data_situacao_cadastral,
-  motivo_situacao_cadastral AS motivo_situacao_cadastral,
-  data_inicio_atividade AS data_inicio_atividade,
-  cnae_principal AS cnae_principal,
-  cnae.descricao AS cnae_descricao,
-  tipo_logradouro AS endereco_tipo_logradouro,
-  logradouro AS endereco_nome_logradouro,
-  numero AS endereco_numero_logradouro,
-  bairro AS endereco_bairro_logradouro,
-  cep AS endereco_numero_cep,
-  uf AS endereco_unidade_federativa,
-  codigo_municipio_siafi AS codigo_municipio_siafi,
-  natureza_juridica AS cod_natureza_juridica,
-  nat.descricao AS desc_natureza_juridica,
-  qualificacao_responsavel AS qualificacao_responsavel,
-  capital_social AS val_capital_social,
-  emp.porte_empresa AS cod_porte_empresa,
-  porte.desc_porte_empresa AS desc_porte_empresa,
-  ente_federativo_responsavel AS ente_federativo_responsavel
-from bronze_estabelecimentos est
-join bronze_empresas emp
-on est.cnpj_basico = emp.cnpj_basico
-left join bronze_cnae cnae
-on est.cnae_principal = cnae.cod_cnae
-left join bronze_porte_empresa porte
-on emp.porte_empresa = porte.porte_empresa
-left join bronze_naturezas nat
-on emp.natureza_juridica = nat.codigo;
-
+  ve.id_loja AS id_loja,
+  lo.cod AS codigo_loja,
+  lo.varejista AS varejista,
+  lo.nlj AS nome_da_loja,
+  lo.tipo AS tipo_de_loja,
+  lo.cep AS cep,
+  lo.lat_long AS lat_long,
+  ve.id_produto AS id_produto,
+  me.nome_medicamento AS nome_medicamento,
+  me.categoria_regulatoria AS categoria_regulatoria,
+  me.numero_registro_produto AS numero_registro_produto,
+  me.data_vencimento_registro AS data_vencimento_registro,
+  me.numero_processo AS numero_processo,
+  me.classe_terapeutica AS classe_terapeutica,
+  me.cod_empresa AS cod_empresa,
+  me.empresa_detentora_registro AS empresa_detentora_registro,
+  me.principio_ativo AS principio_ativo,
+  es.id_estoque AS id_estoque,
+  es.data_estoque AS data_estoque,
+  es.estoque AS quantidade_estoque,
+  ve.id_venda AS id_venda,
+  ve.dt_venda AS data_venda,
+  ve.qt_venda AS quantidade_venda,
+  ve.vl_venda AS vl_venda
+FROM bronze_vendas ve
+LEFT JOIN bronze_dim_loja lo
+  ON ve.id_loja = lo.cod
+LEFT JOIN bronze_dim_medicamento me
+  ON ve.id_produto = me.id_produto
+LEFT JOIN bronze_estoque es
+  ON me.id_produto = es.id_produto
 
 ```
 
@@ -89,39 +82,4 @@ Filtre as Consultas (p.ex.  Selecione suas próprias Queries):
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab03_6.png" style="height: 700px;">
 
-
-## Exercício 03.06 - Colocando Comentários na Tabela e nas Colunas
-
-``` sql
-USE CATALOG academy;
-
-USE <seu_nome_login>;
-
-COMMENT ON TABLE silver_empresas IS 'Tabela contendo dados das empresas';
-
-ALTER TABLE silver_empresas ALTER COLUMN cnpj_basico COMMENT 'número do CNPJ raiz de 8 posições';
-ALTER TABLE silver_empresas ALTER COLUMN nome_matriz COMMENT 'Nome da Matriz';
-ALTER TABLE silver_empresas ALTER COLUMN nome_fantasia_empresa COMMENT 'Nome fantasia da empresa';
-ALTER TABLE silver_empresas ALTER COLUMN nome_razao_social COMMENT 'Nome da Razão Social';
-ALTER TABLE silver_empresas ALTER COLUMN cod_situacao_cadastral COMMENT 'Código da Situação Cadastral';
-ALTER TABLE silver_empresas ALTER COLUMN data_situacao_cadastral COMMENT 'Data da Situação Cadastral';
-ALTER TABLE silver_empresas ALTER COLUMN motivo_situacao_cadastral COMMENT 'Motivo da Situação Cadastral';
-ALTER TABLE silver_empresas ALTER COLUMN data_inicio_atividade COMMENT 'Data de início da atividade';
-ALTER TABLE silver_empresas ALTER COLUMN cnae_principal COMMENT 'CNAE Código da Natureza Economica';
-ALTER TABLE silver_empresas ALTER COLUMN cnae_descricao COMMENT 'Descrição do CNAE';
-ALTER TABLE silver_empresas ALTER COLUMN endereco_tipo_logradouro COMMENT 'Endereço - Tipo de Logradouro';
-ALTER TABLE silver_empresas ALTER COLUMN endereco_nome_logradouro COMMENT 'Endereço - Nome do Logradouro';
-ALTER TABLE silver_empresas ALTER COLUMN endereco_numero_logradouro COMMENT 'Endereço - Número do Logradouro';
-ALTER TABLE silver_empresas ALTER COLUMN endereco_bairro_logradouro COMMENT 'Endereço - Bairro do Logradouro';
-ALTER TABLE silver_empresas ALTER COLUMN endereco_numero_cep COMMENT 'Endereço - número do CEP';
-ALTER TABLE silver_empresas ALTER COLUMN endereco_unidade_federativa COMMENT 'Endereço - Unidade Federativa';
-ALTER TABLE silver_empresas ALTER COLUMN codigo_municipio_siafi COMMENT 'Código do Município SIAFI';
-ALTER TABLE silver_empresas ALTER COLUMN cod_natureza_juridica COMMENT 'Código da Natureza Jurídica';
-ALTER TABLE silver_empresas ALTER COLUMN desc_natureza_juridica COMMENT 'Descrição da Natureza Jurídica';
-ALTER TABLE silver_empresas ALTER COLUMN qualificacao_responsavel COMMENT 'Qualificação do Responsável';
-ALTER TABLE silver_empresas ALTER COLUMN val_capital_social COMMENT 'Valor do Capital Social';
-ALTER TABLE silver_empresas ALTER COLUMN cod_porte_empresa COMMENT 'Código do Porte da Empresa';
-ALTER TABLE silver_empresas ALTER COLUMN desc_porte_empresa COMMENT 'Descrição do Porte da Empresa';
-ALTER TABLE silver_empresas ALTER COLUMN ente_federativo_responsavel COMMENT 'Ente Federativo Responsável';
-```
 

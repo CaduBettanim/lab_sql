@@ -3,7 +3,7 @@
 
 # Databricks SQL Labs 
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, Dask, DataViz, SQL end-point).
+Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, DataViz, Genie).
 
 ## Ementa do Curso
 
@@ -29,6 +29,13 @@ Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de An
 * [What is Data Warehousing on Databricks](https://docs.databricks.com/sql/index.html#what-is-data-warehousing-on-databricks)
 * [SQL Language reference - Inglês](https://docs.databricks.com/sql/language-manual/index.html)
 * [SQL Language reference - Português](https://learn.microsoft.com/pt-br/azure/databricks/sql/language-manual)
+* [Genie AI/BI  - Análise inteligente para equipes de negócios](https://www.databricks.com/br/product/ai-bi/genie)
+* [Dashboards AI/BI - Hot Site](https://www.databricks.com/br/product/ai-bi)
+* [Genie AI/BI - Documentação Oficial](https://docs.databricks.com/pt/genie/index.html)
+* [Genie AI/BI - Adicionando Instruções no Prompt](https://docs.databricks.com/pt/genie/index.html#provide-instructions)
+* [Genie AI/BI - Boas Práticas](https://docs.databricks.com/pt/genie/best-practices.html)
+* [BLOG - Introducing AI/BI: Intelligent Analytics for Real-World Data](https://www.databricks.com/blog/introducing-aibi-intelligent-analytics-real-world-data)
+* [BLOG - 7 Techniques of Semantic Modeling for Databricks Genie](https://medium.com/@kyle.hale/7-techniques-of-semantic-modeling-for-databricks-genie-b117460efe10)
 
 
 
@@ -44,7 +51,7 @@ Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de An
 ## e-Books
 
 <a href="https://www.databricks.com/resources/ebook/migrating-from-a-data-warehouse-to-a-data-lakehouse"><img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/ebook1.png" style="height: 300px;" ></a> 
-<a href="https://www.databricks.com/resources/ebook/data-lakehouse-is-your-next-data-warehouse"><img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/ebook2.png" style="height: 300px;"></a> 
+<a href="https://www.databricks.com/resources/ebook/migrate-your-legacy-data-warehouse-databricks"><img src="https://www.databricks.com/sites/default/files/2025-04/lp-headerhero-image-eb-migration-strategies-from-databricks-2x.png" style="height: 300px;" ></a> 
 <a href="https://www.databricks.com/resources/ebook/rise-data-lakehouse"><img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/ebook3.png" style="height: 300px;"></a> 
 
 </br></br>
@@ -52,11 +59,6 @@ Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de An
 ## Databricks ACADEMY
 
 Trilhas disponíveis (Learning Plan):
-* What is the Databricks Lakehouse Platform? (ID: E-Q079O1)
-* Databricks SQL for Technical Onboarding (ID: E-VMWR71)
-* Data Analysis with Databricks SQL (ID: E-1QW751)
-
-Hot Site: Data Analysis with Databricks SQL 
-* https://www.databricks.com/learn/training/catalog/data-analysis
+* https://www.databricks.com/training/catalog?roles=data-analyst
 </br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/trilha_academy.png" style="height: 300px;">  

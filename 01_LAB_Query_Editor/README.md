@@ -3,7 +3,7 @@
 
 # Hands-On LAB 01 - Explorando o Editor de Query
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, Dask, DataViz, SQL end-point).
+Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, DataViz, Genie).
 
 
 ## Objetivos do Exercício
@@ -34,9 +34,11 @@ Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor*
 ## Exercício 01.01 - Criação do database
 
 ``` sql
-USE CATALOG academy;
+CREATE CATALOG IF NOT EXISTS dbacademy; 
 
 CREATE DATABASE IF NOT EXISTS <seu_nome_login>;
+
+USE CATALOG dbacademy;
 
 USE <seu_nome_login>;
 ```
@@ -44,70 +46,72 @@ USE <seu_nome_login>;
 ## Exercício 01.02 - Criação da Tabela
 
 ``` sql
-
-CREATE OR REPLACE TABLE bronze_porte_empresa 
-  ( porte_empresa      INT    COMMENT "codigo do porte da empresa",
-    desc_porte_empresa STRING COMMENT "descricao do porte da empresa" )
-COMMENT "Tabela auxiliar do porte das empresas"
+CREATE OR REPLACE TABLE porte_empresa 
+  ( id_natureza_juridica    INT     COMMENT "codigo do porte da empresa",
+    sig_natureza_juridica   STRING  COMMENT "sigla que representa a natureza juridica da empresa",
+    desc_natureza_juridica  STRING  COMMENT "descricao da natura juridica" )
+COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas"
 ```
 
  ## Exercício 01.03 - Inserindo dados na Tabela através de SQL INSERT
 
  ``` sql
- INSERT INTO bronze_porte_empresa VALUES (1, "NAO INFORMADO") ;
- INSERT INTO bronze_porte_empresa VALUES (2, "MICRO EMPRESA") ;
- INSERT INTO bronze_porte_empresa VALUES (3, "PEQUENO PORTE") ;
- INSERT INTO bronze_porte_empresa VALUES (4, "NAO SEI") ;
- INSERT INTO bronze_porte_empresa VALUES (5, "NULL") ;
+ INSERT INTO porte_empresa VALUES (1, "MEI", "Microempreendedor Individual") ;
+ INSERT INTO porte_empresa VALUES (2, "EI", "Empresario Individual") ;
+ INSERT INTO porte_empresa VALUES (3, "SLU", "Sociedade Limitada Unipessoal") ;
+ INSERT INTO porte_empresa VALUES (4, "LTDA", "Sociedade Empresaria Limitada") ;
+ INSERT INTO porte_empresa VALUES (5, "SS", "Sociedade Simples") ;
+ INSERT INTO porte_empresa VALUES (6, "S/A", "Sociedade Anônima") ;
+ INSERT INTO porte_empresa VALUES (7, "NULL", "NULL") ;
 ```
 
  ## Exercício 01.04 - Verificando o conteúdo da TABELA
 
  ``` sql
 SELECT * 
-FROM bronze_porte_empresa 
-ORDER BY porte_empresa
+FROM porte_empresa 
+ORDER BY id_natureza_juridica
 ```
 
  ## Exercício 01.05 - Alterando o conteúdo da TABELA
 
  ``` sql
-UPDATE bronze_porte_empresa  
+UPDATE porte_empresa  
 SET desc_porte_empresa = "OUTROS" 
-WHERE porte_empresa = 5;
+WHERE id_natureza_juridica = 5;
 
 
 DELETE 
-FROM bronze_porte_empresa 
-WHERE porte_empresa = 4;
+FROM porte_empresa 
+WHERE id_natureza_juridica = 4;
 ```
 
 ## Exercício 01.06 - Visualizando o Histórico de Atualizações da tabela
 
  ``` sql
-DESCRIBE HISTORY bronze_porte_empresa 
+DESCRIBE HISTORY porte_empresa 
 ```
 
 ## Exercício 01.07 - Visualizando o conteúdo da tabela na versão anterior (TIME TRAVEL)
 
  ``` sql
-SELECT * FROM bronze_porte_empresa VERSION AS OF 5
+SELECT * FROM porte_empresa VERSION AS OF 5
 ```
 
 ## Exercício 01.08 - RESTAURANDO o conteúdo da tabela na versão anterior (TIME TRAVEL)
 
  ``` sql
-RESTORE TABLE bronze_porte_empresa TO VERSION AS OF 5 
+RESTORE TABLE porte_empresa TO VERSION AS OF 5 
 ```
 
 ## Exercício 01.09 - Visualizando as propriedades da Tabela
 
  ``` sql
-DESCRIBE DETAIL bronze_porte_empresa 
+DESCRIBE DETAIL porte_empresa 
 ```
 
 ## Exercício 01.10 - Visualizando as informações DETALHADAS da Tabela
 
  ``` sql
-DESCRIBE TABLE EXTENDED bronze_porte_empresa
+DESCRIBE TABLE EXTENDED porte_empresa
 ```
