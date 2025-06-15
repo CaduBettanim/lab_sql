@@ -12,7 +12,7 @@ O objetivo desse laboratório é conhecer as funcionalidades de consulta (_Query
 </br>
 Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor**".
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab01_editor_sql.png">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_1.png">
 
 
 </br></br></br>
@@ -77,13 +77,13 @@ ORDER BY id_natureza_juridica
 
  ``` sql
 UPDATE porte_empresa  
-SET desc_porte_empresa = "OUTROS" 
-WHERE id_natureza_juridica = 5;
+SET desc_natureza_juridica = "OUTROS" 
+WHERE id_natureza_juridica = 7;
 
 
 DELETE 
 FROM porte_empresa 
-WHERE id_natureza_juridica = 4;
+WHERE id_natureza_juridica = 7;
 ```
 
 ## Exercício 01.06 - Visualizando o Histórico de Atualizações da tabela
