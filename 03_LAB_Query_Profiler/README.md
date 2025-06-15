@@ -64,7 +64,7 @@ No Menu, escolha a opção "Query History"
 
 Filtre as Consultas (p.ex.  Selecione suas próprias Queries):
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_2.png?raw=true" style="height: 100px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_2.png?raw=true">
 
 ## Exercício 03.03 - Analisando o Query Profiler
 
@@ -73,8 +73,8 @@ Filtre as Consultas (p.ex.  Selecione suas próprias Queries):
 
 ## Exercício 03.04 - Analisando o Plano de Execução
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_4.png?raw=true" style="height: 250px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_4.png?raw=true" style="height: 300px;">
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_5.png?raw=true" style="height: 700px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_5.png?raw=true">
 
 
