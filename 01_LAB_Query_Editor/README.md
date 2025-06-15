@@ -12,7 +12,7 @@ O objetivo desse laboratório é conhecer as funcionalidades de consulta (_Query
 </br>
 Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor**".
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_1.png">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_1.png?raw=true">
 
 
 </br></br></br>

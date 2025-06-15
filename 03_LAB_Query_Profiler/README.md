@@ -12,7 +12,7 @@ O objetivo desse laboratório é explorar as funcionalidade de plano de execuç�
 </br>
 
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/desnormaliza.png">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/modelagem.png?raw=true">
 
 Vamos utilizar o "Editor SQL".
 
@@ -60,26 +60,21 @@ LEFT JOIN bronze_estoque es
 
 No Menu, escolha a opção "Query History"
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab03_1.png" style="height: 200px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_1.png?raw=true" style="height: 300px;">
 
 Filtre as Consultas (p.ex.  Selecione suas próprias Queries):
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab03_2.png" style="height: 300px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_2.png?raw=true" style="height: 100px;">
 
-## Exercício 03.03 - Analisando o Detalhe da Execução
+## Exercício 03.03 - Analisando o Query Profiler
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab03_3.png" style="height: 200px;">
-
-
-## Exercício 03.04 - Analisando o Query Profiler
-
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab03_4.png" style="height: 200px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_3.png?raw=true" style="height: 400px;">
 
 
-## Exercício 03.05 - Analisando o Plano de Execução
+## Exercício 03.04 - Analisando o Plano de Execução
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab03_5.png" style="height: 250px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_4.png?raw=true" style="height: 250px;">
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab03_6.png" style="height: 700px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_5.png?raw=true" style="height: 700px;">
 
 
