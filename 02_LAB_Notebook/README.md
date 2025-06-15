@@ -26,7 +26,7 @@ Na janela de importação, clique na opção "**URL**".
 No campo texto da URL, digite o endereço do LINK destacado abaixo:
 
 ``` html
-https://github.com/Databricks-BR/lab_sql/blob/main/02_LAB_Notebook/lab02_01_carga_csv.ipynb
+https://github.com/Gabriel-Rangel/lab_sql/blob/main/02_LAB_Notebook/lab02_01_carga_csv.ipynb
 ```
 Conforme a figura abaixo:
 </br></br>
@@ -36,12 +36,12 @@ Conforme a figura abaixo:
 * Não esqueça de tirar o caracter "#" (jogo da velha) da frente da linha.
 * Verifique se o Cluster (máquina virtual que executará o processo) está Atachada (barra superior ao lado do botão "Run All"). 
 </br></br>
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab02_3.png" style="height: 200px;">>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab02_3.png">
 </br></br>
 Execute os comandos do Notebook, clicando no botão "RUN ALL".
 </br></br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab02_4.png">
-</br></br> </br> </br>
+</br></br>
 Visualize os resultados no Catalog Explorer:
 
 </br></br>
