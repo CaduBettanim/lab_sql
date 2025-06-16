@@ -41,14 +41,12 @@ gráfico de linhas do valor de fechamento por dia e por empresa
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab05_ai_05.png" style="height: 100px;"></br>
 
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_05.png" width="800px">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_1.png?raw=true" width="800px">
 </br></br></br>
 
 ## Exercício 02.03 - Adicionando um FILTRO de página
 
-Organize novamente o layout do Painel, </br>
-colocando o novo gráfico alinhado com o gráfico de "Volumes".</br>
-Depois clique no menu azul suspenso no ícone de FILTRO.</br>
+Clique no menu azul suspenso no ícone de FILTRO.</br>
 Escolha o atributo (Field):  "**company**"
 </br></br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_06.png" width="850px">
@@ -69,7 +67,8 @@ e substitua pelo código (markdown) abaixo: </br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_07.png" width="700px">
 </br></br></br>
 
-O Painel ficará com a aparência da imagem abaixo.</br>
+
+Organize o layout do dashboard para que fique com a aparência da imagem abaixo.</br>
 Faça o devido alinhamento do gráfico no layout.</br>
 Altere o nome do Dashboard na barra superior.</br>
 Clique no botão "**Publish**" para publicar o Painel.
@@ -161,37 +160,28 @@ E depois clique no botão "**RUN**"
 
 ## Exercício 02.07 - Adicionando um novo Gráfico com o contexto novo de dados
 
-Clique no menu azul suspenso na posição inferior do painel, </br>
-no botão com o ícone de gráfico, </br>
-e na barra de configuração (lateral direita do painel),</br>
-escolha o nome do nome Dataset (que veio da Query SQL). 
+1. Clique no menu azul suspenso na posição inferior do painel, </br>
+no botão com o ícone de gráfico </br>
+2. Na barra de configuração (lateral direita do painel),</br>
+escolha o nome do nome Dataset (que veio da Query SQL).</br> 
+3. Configure o tipo de Visualização para "Tabela"(Table).</br>
+4. Marque a opção para incluir TODOS os campos na tabela.
+5. Na configuração, clique no campo(coluna) com o nome de "**image**".</br>
 </br></br>
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_13.png" width="700px">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_2.png?raw=true" width="700px">
 </br></br></br>
 
-Configure o tipo de Visualização para "Tabela"(Table).</br>
-Marque a opção para incluir TODOS os campos na tabela.
+6. Na opção de "Display", configure como "image".
+7. Na opção de "SIZE", coloque o valor de "25" no campo "width".
+8. Na opção de "Default column width", coloque o valor de "150".
 </br></br>
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_14.png" width="700px">
-</br></br></br>
-
-Na configuração, clique no campo(coluna) com o nome de "**image**".</br>
-Na opção de "Display", configure como "image". </br>
-
-</br>
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_15.png" width="700px">
-</br></br></br>
-
-Na opção de "SIZE", coloque o valor de "25" no campo "width".</br>
-Na opção de "Default column width", coloque o valor de "150".
-</br></br>
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_16.png" width="700px">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_3.png?raw=true" width="700px">
 </br></br></br>
 
 Como resultado esperado, teremos a figura abaixo.</br>
 Salve (Publique) novamente o Painel.
 </br></br>
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_17.png" width="700px">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_4.png?raw=true" width="700px">
 </br></br></br>
 
 
