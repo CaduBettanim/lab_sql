@@ -36,10 +36,25 @@ Para esse exercício, vamos explorar as funcionalidades citadas,  conforme exemp
 
 
 ``` md
-
 SELECT ai_translate('Hello, how are you?', 'br') as traducao;
-
-
+```
+``` md
+WITH 
+sizing AS (SELECT * FROM dbacademy.gabriel_rangel.bronze_dim_medicamento LIMIT 10),
+comentarios AS (
+    SELECT
+    CASE
+        WHEN rand() > 0.5 THEN
+        ai_gen(CONCAT('Write a positive comment about the medicine: ', nome_medicamento))
+        ELSE
+        ai_gen(CONCAT('Write a negative comment about the medicine: ', nome_medicamento))
+    END AS medicamento_review
+    FROM sizing
+)
+    SELECT
+    *,
+    ai_analyze_sentiment(medicamento_review) AS sentimento_review
+    FROM comentarios
 ```
 
 </br></br>
