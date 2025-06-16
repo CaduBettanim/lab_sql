@@ -14,13 +14,13 @@ O objetivo desse laboratório é explorar as funcionalidade de criação de um A
 
 Vamos utilizar a opção do menu  "**ALERTS**".
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab04_1.png" style="height: 200px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab04_1.png?raw=true" style="height: 200px;">
 
 </br></br>
 
 Clique no botão **CREATE ALERT**
 
-O SQL Editor agora é integrado ao Alertas, copia a query abaixo e clique em **RUN**
+O SQL Editor agora é integrado ao Alerta, copia a query abaixo e clique em **RUN**
 ``` sql
 
 SELECT close AS valor_apple
@@ -29,10 +29,14 @@ WHERE stock = 'AAPL'
 ORDER BY date DESC;
 
 ```
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab04_2.png?raw=true">
 </br></br>
 
+A query rodando com sucesso, habilitara a parte de configuração a esqueda, configura conforme imagem abaixo
+
+Não esqueça de nomear seu alerta: Sugestão: "Query_Alert"+ <SEU_LOGIN> e clique em **CREATE**
 
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab04_2.png" style="height: 700px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab04_3.png?raw=true" style="height: 700px;">
 
 
