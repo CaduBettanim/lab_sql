@@ -5,37 +5,42 @@
 
 Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, DataViz, Genie).
 
-## Ementa do Curso
+A arquitetura **LAKEHOUSE** e o **Databricks SQL** trazem recursos de Data Warehouse para sua Arquitetura de Dados. </br>
+Usando estruturas de dados, relações e ferramentas de gerenciamento familiares, você pode modelar um Data Warehouse de alto desempenho e econômico que pode ser executado diretamente em seu Data Lake.
+</br></br>
+<img src="https://raw.githubusercontent.com/Databricks-BR/dw/main/images/arquitetura_generica.png" style="width: 800px;">
+</br></br>
+Tal como acontece com um Data Warehouse tradicional, você modela os dados de acordo com os requisitos de negócios e depois os fornece aos usuários finais para análises e relatórios. Ao contrário de um data warehouse tradicional, é possível simplificar e unificar a Arquitetura de Dados, trazendo maior agilidade e colaboração na equipe de Dados (engenheiros, cientistas e analistas), com toda a Governança, Segurança e Ratreabilidade, garantino a integração com o ecossistema de soluções de dados, incluindo as diversas ferramentas de Visualização de Dados.</br>
+</br></br>
+<img src="https://raw.githubusercontent.com/Databricks-BR/dw/main/images/arquitetura_dw.png"  style="width: 800px;">
+</br></br>
+o **AI/BI** é um pacote de ferramentas de Business Intelligende integrados e fornecidos pela Databricks de maneira gratuita, como essa ferramente puxa os dados do DatabricksSQL, seus custos estão ligados apenas sobre as consultas que elas realizam
+1. **AI/BI Dashboards** é uma ferramente que lhe permite criar visualizações de dados e compartilhar relatórios com sua equipe.</br>
+2. **AI/BI Genie** é um recurso do Databricks que permite que as equipes de negócios interajam com o uso de dados em linguagem natural
+</br></br> 
 
-| # | Tópicos | Duração |
-| -- | -- | -- |
-| 01 | Conceito de Lakehouse, Databricks SQL, Custo eficiente, SQL Serverless, Menus e UI | 10 min |
-| 02 | Laboratório 01 - Comandos básicos em SQL no  Editor de SQL e Unity Catalog         | 20 min |
-| 03 | Laboratório 02 - Ingestão de tabelas CSV, Uso do Notebook e Data Explorer          | 10 min |
-| 04 | Laboratório 03 - Consultas avançadas, Query History e Query Profiler               | 20 min |
-| 05 | Laboratório 04 - Criação de um Alerta                                              | 10 min |
-| 06 | Laboratório 05 - Criação de Visualização na Query                                  | 10 min |
-| 07 | Laboratório 06 - Criação de um Painel (Dashboard - LAKEVIEW)                       | 20 min |
-| 08 | Laboratório 07 - Funções de Generative AI com SQL                                  | 10 min |
-| 09 | Considerações finais, Integração de Soluções e Referências Adicionais              |  5 min |
-| 10 | Perguntas e Respostas                                                              | 15 min |
-| 11 | Pesquisa de Satisfação                                                             |  5 min |
+## Ambiente do Laboratório
+Para o desenvolvimento desse laboratório vamos utilizar o **Databricks Free Edition**,  uma versão gratuita do Databricks desenvolvida para estudantes, educadores, amadores e qualquer pessoa interessada em aprender ou fazer experiências com dados e AI.
 
+A Free Edition oferece um site Databricks workspace fácil de usar, onde é possível explorar conjuntos de dados, criar e compartilhar projetos e trabalhar com AI e ferramentas de aprendizado de máquina. É ideal para aprendizado, prototipagem e exploração colaborativa.
+
+**Crie sua conta [aqui](https://login.databricks.com/?dbx_source=docs&intent=SIGN_UP&tuuid=6a4ffcf3-cc8e-4bf6-885e-1e7824086e47&rl_aid=85dd1431-2778-4946-9d43-5dd210e5c552&provider=DB_FREE_TIER)**
+
+## Webinar - Vídeo Youtube
+
+<a href="https://www.youtube.com/watch?v=5AlU1wPr4f0"><img src="https://raw.githubusercontent.com/Databricks-BR/dw/main/images/webinar.png" style="width: 600px;"></a>
 </br>
 
 ## Referências Adicionais
 
 * [Página principal do Databrick SQL](https://www.databricks.com/br/product/databricks-sql)
 * [What is Data Warehousing on Databricks](https://docs.databricks.com/sql/index.html#what-is-data-warehousing-on-databricks)
-* [SQL Language reference - Inglês](https://docs.databricks.com/sql/language-manual/index.html)
 * [SQL Language reference - Português](https://learn.microsoft.com/pt-br/azure/databricks/sql/language-manual)
-* [Genie AI/BI  - Análise inteligente para equipes de negócios](https://www.databricks.com/br/product/ai-bi/genie)
 * [Dashboards AI/BI - Hot Site](https://www.databricks.com/br/product/ai-bi)
+* [Genie AI/BI  - Análise inteligente para equipes de negócios](https://www.databricks.com/br/product/ai-bi/genie)
 * [Genie AI/BI - Documentação Oficial](https://docs.databricks.com/pt/genie/index.html)
-* [Genie AI/BI - Adicionando Instruções no Prompt](https://docs.databricks.com/pt/genie/index.html#provide-instructions)
-* [Genie AI/BI - Boas Práticas](https://docs.databricks.com/pt/genie/best-practices.html)
-* [BLOG - Introducing AI/BI: Intelligent Analytics for Real-World Data](https://www.databricks.com/blog/introducing-aibi-intelligent-analytics-real-world-data)
 * [BLOG - 7 Techniques of Semantic Modeling for Databricks Genie](https://medium.com/@kyle.hale/7-techniques-of-semantic-modeling-for-databricks-genie-b117460efe10)
+* [Databricks Free Edition - Documentação](https://docs.databricks.com/aws/pt/getting-started/free-edition)
 
 
 
