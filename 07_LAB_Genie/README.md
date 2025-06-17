@@ -158,11 +158,11 @@ Vamos ver como funciona:
     - Calcule a quantidade de itens vendidos por janela móvel de 3 meses 
 
 2. Aqui a Genie já até fez uma soma em janela móvel, porém não ficou exatamente do jeito que nós gostaríamos. Então, adicione um exemplo de query seguindo os passos abaixo:
-    - Clique em `Instructions`, no menu à esquerda
-    - Clique em `Add Example Query`
+    - Clique em `SQL Queries`
+    - Depois clique em `Add`
     - Insira a pergunta anterior no campo superior
     - Insira a query abaixo no campo inferior
-        - `SELECT window.end AS dt_venda, SUM(vl_venda) FROM vendas GROUP BY WINDOW(dt_venda, '90 days', '1 day')`
+        - `SELECT window.end AS dt_venda, SUM(vl_venda) FROM dbacademy.<seu_nome>.vendas GROUP BY WINDOW(dt_venda, '90 days', '1 day')`
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_08.png">
 
@@ -185,7 +185,7 @@ Vamos ver na prática:
 1. Faça a pergunta:
     - Qual o lucro projetado do AAS?
 
-2. Realmente, não temos informações suficientes na nossa base para responder à essa pergunta! Para isso, crie a função abaixo com a lógica do cálculo do lucro médio projetado de um produto:
+2. Realmente, não temos informações suficientes na nossa base para responder à essa pergunta! Para isso, crie a função abaixo com a lógica do cálculo do lucro médio projetado de um produto rodando o exemplo abaixo no **SQL EDITOR**:
 
 ``` sql
 CREATE OR REPLACE FUNCTION calc_lucro(medicamento STRING)
@@ -202,9 +202,13 @@ CREATE OR REPLACE FUNCTION calc_lucro(medicamento STRING)
     GROUP BY ALL
 ```
 
-3. Adicione esta função a sua Genie
+3. Adicione esta função a sua Genie, muito similar com o realizado no exercício anterior mais precisamos clicar no seta para baixo ao lado de `Add` e selecionar a opção `SQL function` </br>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_9.png?raw=true">
+</br>
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_09.png">
+4. Agora escolha a função que acabamos de criar selecionando o catalágo, schema/database e a função.
+
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_10.png?raw=true">
 
 4. Faça novamente a pergunta anterior
 
