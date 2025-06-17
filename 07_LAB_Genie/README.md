@@ -26,7 +26,7 @@ Vamos começar criando uma Genie para fazer nossas perguntas. Para isso, vamos s
 
 1. No menu principal (à esquerda), clique em `New` > `Genie space`
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_01.png"><br><br>
+<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_01.png" width=300><br><br>
 
 2. Configure sua Genie
     - Selecione as seguintes tabelas:
@@ -36,9 +36,10 @@ Vamos começar criando uma Genie para fazer nossas perguntas. Para isso, vamos s
         - dim_loja
     - Clique em `Create`
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_3.png?raw=true" width=800>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_3.png?raw=true" width=300></br></br> 
 
 3. Altere o nome da sua Genie Space e seu espaço deve ficar assim:
+
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_4.png?raw=true">
 
 </br></br>
