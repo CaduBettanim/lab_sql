@@ -16,9 +16,7 @@ O objetivo desse laboratório é usar o AI/BI Genie para permitir a análise de 
 
 1. Em alguns momentos, utilizaremos o SQL Editor. Deixe-o preparado em uma outra janela e selecione seu database.
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_04.png">
-
-***Caso não tenha feito ainda, carregue os dados conforme descrito no [Lab 01 - Importando os dados](https://github.com/Databricks-BR/genie_ai_bi/blob/main/01_LAB_importando_dados/README.md)***.
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_1.png?raw=true">
 
 </br></br>
 
@@ -31,16 +29,14 @@ Vamos começar criando uma Genie para fazer nossas perguntas. Para isso, vamos s
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_01.png"><br><br>
 
 2. Configure sua Genie
-    - Crie um nome para a sua Genie, por exemplo `<suas iniciais> Genie de Vendas`
-    - Selecione seu SQL Warehouse
     - Selecione as seguintes tabelas:
         - vendas
         - estoque
         - dim_medicamento
         - dim_loja
-    - Clique em `Save`
+    - Clique em `Create`
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_02.png" width=800>
+<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_03.png" width=800>
 
 </br></br>
 
