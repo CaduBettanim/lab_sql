@@ -24,7 +24,7 @@ O SQL Editor agora é integrado ao Alerta, copia a query abaixo e clique em **RU
 ``` sql
 
 SELECT close AS valor_apple
-FROM dbacademy.SEU_NOME.bronze_stock_bigtech
+FROM dbacademy.SEU_NOME.stock_bigtech
 WHERE stock = 'AAPL'
 ORDER BY date DESC;
 
@@ -34,7 +34,9 @@ ORDER BY date DESC;
 
 A query rodando com sucesso, habilitara a parte de configuração a esqueda, configura conforme imagem abaixo
 
-Não esqueça de nomear seu alerta: Sugestão: "Query_Alert"+ <SEU_LOGIN> e clique em **CREATE**
+* Não esqueça de nomear seu alerta: Sugestão: "Query_Alert"+ <SEU_LOGIN> e clique em **CREATE**
+
+* No campo **Notify** coloque o email usado para criar a conta do Databricks Free Edition
 
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab04_3.png?raw=true" style="height: 700px;">

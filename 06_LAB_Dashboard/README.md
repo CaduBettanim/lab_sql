@@ -8,7 +8,7 @@ Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de An
 ## Objetivos do Exercício
 
 O objetivo desse laboratório é montar um Painel, utilizando os dados de ações das Big Tech da NASDAQ.
-</br></br></br>
+</br></br>
 
 
 ## Exercício 06.01 - Criando o Dashboard
@@ -21,9 +21,9 @@ Na tela do Dashboard, clique na ABA **"Data"** para adicionar uma fonte de dados
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab05_ai_01.png" style="height: 300px;">
 
-Escolha a opção de "Selecionar uma Tabela":
+Escolha a opção de "Add data source":
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab05_ai_02.png" style="height: 300px;">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_5.png?raw=true" style="height: 300px;">
 
 Digite a palavra de busca **"stock_bigtech"** escolha a tabela e depois volte para área do **CANVAS**
 

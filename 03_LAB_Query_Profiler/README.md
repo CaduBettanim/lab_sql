@@ -45,12 +45,12 @@ SELECT
   ve.dt_venda AS data_venda,
   ve.qt_venda AS quantidade_venda,
   ve.vl_venda AS vl_venda
-FROM bronze_vendas ve
-LEFT JOIN bronze_dim_loja lo
+FROM vendas ve
+LEFT JOIN dim_loja lo
   ON ve.id_loja = lo.cod
-LEFT JOIN bronze_dim_medicamento me
+LEFT JOIN dim_medicamento me
   ON ve.id_produto = me.id_produto
-LEFT JOIN bronze_estoque es
+LEFT JOIN estoque es
   ON me.id_produto = es.id_produto
 
 ```

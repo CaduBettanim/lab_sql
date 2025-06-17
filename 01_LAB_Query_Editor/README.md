@@ -57,8 +57,10 @@ COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas"
 2. Note que a tabela não foi criada dentro do catálago e database criados;
 3. Na primeira query do exercicio de criação de catálago e database utilizamos a cláusula *USE*, mas ela só é persistida em tempo de execução;
 4. Devemos sempre atribuir o nome do catálago e database antes do nome da tabela separado por "." (dbacademy.<seu_nome>.porte_empresa)</br>
-ou podemos especificar catalago e database que queremos usar no próprio editor conforme imagem abaixo:</br>
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_setcatalago.png?raw=true"></br>
+ou podemos especificar catalago e database que queremos usar no próprio editor conforme imagem abaixo:
+</br></br>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_setcatalago.png?raw=true">
+</br></br>
 
  ## Exercício 01.03 - Inserindo dados na Tabela através de SQL INSERT
 
@@ -93,31 +95,58 @@ FROM porte_empresa
 WHERE id_natureza_juridica = 7;
 ```
 
-## Exercício 01.06 - Visualizando o Histórico de Atualizações da tabela
+## Exerício 01.06 - Liquid Clustering
+O Liquid clustering substitui o particionamento de tabelas e o ZORDER para simplificar as decisões de disposição de dados e otimizar o desempenho das consultas. Ele oferece a flexibilidade de redefinir a chave clustering sem reescrever os dados existentes, permitindo que a disposição dos dados evolua junto com as necessidades analíticas ao longo do tempo.
+
+Mas quando aplicar liquid clustering ?
+* Tabelas normalmente filtradas por colunas de alta cardinalidade.</br>
+* Tabelas com grande distorção na distribuição de dados.</br>
+* Tabelas que crescem rapidamente e exigem manutenção e ações de ajuste.</br>
+* Tabelas com requisitos de gravação concorrente.</br>
+* Tabelas com padrões de acesso que mudam com o tempo.</br>
+* Tabelas em que uma chave de partição típica poderia deixar a tabela com muitas ou poucas partições.</br>
+
+A sintaxe para habilitar essa funcionalidade em uma tabela já criada é: </br>
+<span style="color:red"> **NÃO EXECUTAR** </span>
+```sql
+ALTER TABLE <table_name>
+CLUSTER BY (<clustering_columns>)
+```
+Além disso podemos deixar a própria Plataforma de dados inteligente da databricks definir quais são as melhores colunas da nossa tabela para serem definidas como *clustering*.</br>
+<span style="color:green"> **VAMOS EXECUTAR ESSE EXEMPLO** </span>
+```sql
+ALTER TABLE porte_empresa
+CLUSTER BY AUTO
+```
+#### Referências:
+* [Databricks Liquid Clustering](https://docs.databricks.com/aws/pt/delta/clustering)
+* [BLOG - Announcing Automatic Liquid Clustering](https://www.databricks.com/blog/announcing-automatic-liquid-clustering)
+
+## Exercício 01.07 - Visualizando o Histórico de Atualizações da tabela
 
  ``` sql
 DESCRIBE HISTORY porte_empresa 
 ```
 
-## Exercício 01.07 - Visualizando o conteúdo da tabela na versão anterior (TIME TRAVEL)
+## Exercício 01.08 - Visualizando o conteúdo da tabela na versão anterior (TIME TRAVEL)
 
  ``` sql
-SELECT * FROM porte_empresa VERSION AS OF 5
+SELECT * FROM porte_empresa VERSION AS OF 7
 ```
 
-## Exercício 01.08 - RESTAURANDO o conteúdo da tabela na versão anterior (TIME TRAVEL)
+## Exercício 01.09 - RESTAURANDO o conteúdo da tabela na versão anterior (TIME TRAVEL)
 
  ``` sql
-RESTORE TABLE porte_empresa TO VERSION AS OF 5 
+RESTORE TABLE porte_empresa TO VERSION AS OF 7
 ```
 
-## Exercício 01.09 - Visualizando as propriedades da Tabela
+## Exercício 01.10 - Visualizando as propriedades da Tabela
 
  ``` sql
 DESCRIBE DETAIL porte_empresa 
 ```
 
-## Exercício 01.10 - Visualizando as informações DETALHADAS da Tabela
+## Exercício 01.11 - Visualizando as informações DETALHADAS da Tabela
 
  ``` sql
 DESCRIBE TABLE EXTENDED porte_empresa

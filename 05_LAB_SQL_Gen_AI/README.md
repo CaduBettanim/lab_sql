@@ -15,7 +15,6 @@ Estas permitem a utilização de SQL, uma linguagem amplamente utiliza por anali
 Existem funções nativas para executar tarefas pré-definidas ou enviar qualquer instrução desejada para ser executada. Seguem as descrições abaixo:
 
 
-%md
 
 | Gen AI SQL Function | Descrição |
 | -- | -- |
@@ -31,13 +30,19 @@ Existem funções nativas para executar tarefas pré-definidas ou enviar qualque
 | [ai_translate](https://docs.databricks.com/pt/sql/language-manual/functions/ai_translate.html) | Tradução de Textos |
 
 
-</br></br></br></br>
+</br></br>
 Para esse exercício, vamos explorar as funcionalidades citadas,  conforme exemplo abaixo:
 
 
 ``` md
 SELECT ai_translate('Hello, how are you?', 'br') as traducao;
 ```
+</br>
+
+Agora vamos pegar nossa tabela de medicamentos,</br> 
+criar uma nova coluna atribuindo comentários a cada medicamento de forma aleatória  usando a função **ai_gen** </br>
+e depois criar uma nova coluna com a análise de sentimento da coluna de comentários usando a função **ai_analyze_sentiment**.
+
 ``` md
 WITH 
 sizing AS (SELECT * FROM dbacademy.gabriel_rangel.bronze_dim_medicamento LIMIT 10),
