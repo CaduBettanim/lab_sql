@@ -34,6 +34,7 @@ Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor*
 ## Exercício 01.01 - Criação do catálago e database
 
 ``` sql
+GRANT CREATE CATALOG ON METASTORE TO `account users`;
 CREATE CATALOG IF NOT EXISTS dbacademy;
 USE CATALOG dbacademy;
 
@@ -53,7 +54,7 @@ COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas"
 </br>
 
 **NOTA**:
-1. Aperte o botão de atualizar o catálago;
+1. Aperte o botão para atualizar o catálago;
 2. Note que a tabela não foi criada dentro do catálago e database criados;
 3. Na primeira query do exercicio de criação de catálago e database utilizamos a cláusula *USE*, mas ela só é persistida em tempo de execução;
 4. Devemos sempre atribuir o nome do catálago e database antes do nome da tabela separado por "." (dbacademy.<seu_nome>.porte_empresa)</br>
