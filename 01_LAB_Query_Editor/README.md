@@ -31,16 +31,14 @@ Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor*
 #### Referência:
 * [Databricks Help - DDL Syntax](https://docs.databricks.com/sql/language-manual/sql-ref-syntax-ddl-create-table.html)
 
-## Exercício 01.01 - Criação do database
+## Exercício 01.01 - Criação do catálago e database
 
 ``` sql
-CREATE CATALOG IF NOT EXISTS dbacademy; 
-
-CREATE DATABASE IF NOT EXISTS <seu_nome_login>;
-
+CREATE CATALOG IF NOT EXISTS dbacademy;
 USE CATALOG dbacademy;
 
-USE <seu_nome_login>;
+CREATE DATABASE IF NOT EXISTS <seu_nome>;
+USE <seu_nome>;
 ```
 
 ## Exercício 01.02 - Criação da Tabela
@@ -52,6 +50,15 @@ CREATE OR REPLACE TABLE porte_empresa
     desc_natureza_juridica  STRING  COMMENT "descricao da natura juridica" )
 COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas"
 ```
+</br>
+
+**NOTA**:
+1. Aperte o botão de atualizar o catálago;
+2. Note que a tabela não foi criada dentro do catálago e database criados;
+3. Na primeira query do exercicio de criação de catálago e database utilizamos a cláusula *USE*, mas ela só é persistida em tempo de execução;
+4. Devemos sempre atribuir o nome do catálago e database antes do nome da tabela separado por "." (dbacademy.<seu_nome>.porte_empresa)</br>
+ou podemos especificar catalago e database que queremos usar no próprio editor conforme imagem abaixo:</br>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_setcatalago.png?raw=true"></br>
 
  ## Exercício 01.03 - Inserindo dados na Tabela através de SQL INSERT
 
