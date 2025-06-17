@@ -19,9 +19,9 @@ Clique na opção **CREATE DASHBOARD**
 
 Na tela do Dashboard, clique na ABA **"Data"** para adicionar uma fonte de dados:
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab05_ai_01.png" style="height: 300px;">
+<img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab05_ai_01.png" style="height: 300px;"></br>
 
-Escolha a opção de "Add data source":
+Escolha a opção *"Add data source"*
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_5.png?raw=true" style="height: 300px;">
 
