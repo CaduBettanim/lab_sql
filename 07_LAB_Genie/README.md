@@ -9,7 +9,7 @@ Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de pe
 ## Objetivos do Exercício
 
 O objetivo desse laboratório é usar o AI/BI Genie para permitir a análise de dados de vendas utilizando somente **Português**.
-
+***Caso não tenha feito ainda, carregue os dados conforme descrito no Lab 02 - LAB_Notebook.***
 </br></br>
 
 ## Exercício 03.00 - Preparação
