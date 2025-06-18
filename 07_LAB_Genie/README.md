@@ -85,8 +85,8 @@ Vamos ver como funciona!
 1. Faça a seguinte pergunta:
     - Qual o valor total de venda por loja? Exiba o nome da loja
 
-2. Ops, parece que a Genie não conseguiu descobrir qual coluna contém o nome da loja. Use o SQL Editor para adicionar um comentário na coluna **nlj** da tabela **dim_loja** e explicar que ela contém essa informação
-    - `ALTER TABLE dim_loja ALTER COLUMN nlj COMMENT 'Nome da loja'`
+2. Ops, parece que a Genie não conseguiu descobrir qual coluna contém o nome da loja. Use o SQL Editor para adicionar um comentário na coluna **nl** da tabela **dim_loja** e explicar que ela contém essa informação
+    - `ALTER TABLE dim_loja ALTER COLUMN nl COMMENT 'Nome da loja'`
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_06.png"><br><br>
 
@@ -109,7 +109,7 @@ Vamos então adicionar chaves primárias e estrangeiras nessas tabelas para que 
 1. Use o SQL Editor para adicionar as chaves primárias e estrangeiras nas tabelas `dim_loja` e `vendas`
 
 ``` sql
-alter table dim_loja alter column cod set not null;
+ALTER TABLE dim_loja ALTER column cod SET NOT NULL;
 ALTER TABLE dim_loja ADD CONSTRAINT pk_dim_loja PRIMARY KEY (cod);
 ALTER TABLE vendas ADD CONSTRAINT fk_venda_dim_loja FOREIGN KEY (id_loja) REFERENCES dim_loja(cod);
 ```

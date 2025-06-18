@@ -43,7 +43,13 @@ USE <seu_nome>;
 ```
 
 ## Exercício 01.02 - Criação da Tabela
-
+1. Na primeira query do laboratório realizamos a criação de catálago e database w utilizamos a cláusula *USE*, mas ela só é persistida em tempo de execução;
+2. Devemos sempre atribuir o nome do catálago e database antes do nome da tabela separado por "." (dbacademy.<seu_nome>.porte_empresa)</br>
+ou podemos especificar o catálago e database que queremos usar no próprio editor conforme imagem abaixo:
+</br></br>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_setcatalago.png?raw=true">
+</br></br>
+3. Crie a tabela a seguir:
 ``` sql
 CREATE OR REPLACE TABLE porte_empresa 
   ( id_natureza_juridica    INT     COMMENT "codigo do porte da empresa",
@@ -52,16 +58,6 @@ CREATE OR REPLACE TABLE porte_empresa
 COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas"
 ```
 </br>
-
-**NOTA**:
-1. Aperte o botão para atualizar o catálago;
-2. Note que a tabela não foi criada dentro do catálago e database criados;
-3. Na primeira query do exercicio de criação de catálago e database utilizamos a cláusula *USE*, mas ela só é persistida em tempo de execução;
-4. Devemos sempre atribuir o nome do catálago e database antes do nome da tabela separado por "." (dbacademy.<seu_nome>.porte_empresa)</br>
-ou podemos especificar catalago e database que queremos usar no próprio editor conforme imagem abaixo:
-</br></br>
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_setcatalago.png?raw=true">
-</br></br>
 
  ## Exercício 01.03 - Inserindo dados na Tabela através de SQL INSERT
 
@@ -89,11 +85,22 @@ ORDER BY id_natureza_juridica
 UPDATE porte_empresa  
 SET desc_natureza_juridica = "OUTROS" 
 WHERE id_natureza_juridica = 7;
+```
 
+``` sql
+SELECT * 
+FROM porte_empresa
+WHERE id_natureza_juridica = 7
+```
 
+``` sql
 DELETE 
 FROM porte_empresa 
 WHERE id_natureza_juridica = 7;
+```
+
+``` sql
+SELECT * FROM porte_empresa
 ```
 
 ## Exerício 01.06 - Liquid Clustering
