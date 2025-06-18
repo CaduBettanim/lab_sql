@@ -7,7 +7,7 @@ Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de An
 
 ## Objetivos do Exercício
 
-O objetivo desse laboratório é montar um Painel, utilizando os dados de ações das Big Tech da NASDAQ.
+O objetivo desse laboratório é montar um Painel, utilizando os dados de ações das Big Tech da NASDAQ.</br> 
 ***Caso não tenha feito ainda, carregue os dados conforme descrito no Lab 02 - LAB_Notebook.***
 </br></br>
 
