@@ -49,7 +49,9 @@ ou podemos especificar o catálago e database que queremos usar no próprio edit
 </br></br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_setcatalago.png?raw=true">
 </br></br>
+
 3. Crie a tabela a seguir:
+
 ``` sql
 CREATE OR REPLACE TABLE porte_empresa 
   ( id_natureza_juridica    INT     COMMENT "codigo do porte da empresa",
