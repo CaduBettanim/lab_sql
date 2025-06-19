@@ -15,7 +15,7 @@ Nesse exercício vamos importar um Notebook (em linguagem Python) para copiar as
 ## Exercício 2:
 
 * Escolha a opção do MENU:  "Workspace", conforme figura abaixo.</br>
-* Selecione o seu login no Workspace.</br>
+* Selecione "Home".</br>
 * Clique com o botão direito do mouse na área destacada.</br>
 * Selecione a opção IMPORTAR.</br> </br>
 
