@@ -85,8 +85,8 @@ Vamos ver como funciona!
 1. Faça a seguinte pergunta:
     - Qual o valor total de venda por loja? Exiba o nome da loja
 
-2. Ops, parece que a Genie não conseguiu descobrir qual coluna contém o nome da loja. Use o SQL Editor para adicionar um comentário na coluna **nl** da tabela **dim_loja** e explicar que ela contém essa informação
-    - `ALTER TABLE dim_loja ALTER COLUMN nl COMMENT 'Nome da loja'`
+2. Ops, parece que a Genie não conseguiu descobrir qual coluna contém o nome da loja. Use o SQL Editor para adicionar um comentário na coluna **st** da tabela **dim_loja** e explicar que ela contém essa informação
+    - `ALTER TABLE dim_loja ALTER COLUMN st COMMENT 'Nome da loja'`
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_06.png"><br><br>
 
@@ -138,6 +138,7 @@ Vamos ver como funciona:
 
 2. Me parece que o resultado não está correto! Na nossa base, o termo prescrição realmente não é mencionado nenhuma vez. Mas acontece que aqui consideramos como medicamentos de prescrição aqueles que não são genéricos. Por isso, adicione a seguinte instrução:
     - `* para calcular indicadores sobre prescrição use categoria_regulatoria <> 'GENÉRICO'`
+    - `* responda em português`
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_07.png">
 
