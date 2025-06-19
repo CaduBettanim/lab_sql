@@ -85,11 +85,11 @@ Vamos ver como funciona!
 1. Faça a seguinte pergunta:
     - Qual o valor total de venda por loja? Exiba o nome da loja
 
-2. Algumas vezes, mesmo com pouco contexto, a Genie consegue descobrir qual a coluna contém o nome da loja, a coluna `dim_loja.st`, é a coluna que contém o nome das lojas, caso o resultado obtido seja igual o da imagem abaixo, a Genie conseguiu descobrir corretamente. </br>
+2. Algumas vezes, mesmo com pouco contexto, a Genie consegue descobrir qual a coluna contém o nome da loja, a coluna `dim_loja.xpto`, é a coluna que contém o nome das lojas, caso o resultado obtido seja igual o da imagem abaixo, a Genie conseguiu descobrir corretamente. </br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_resultado.png?raw=true">
 </br>
-3. Mas caso a Genie não conseguiu associar a coluna correta, use o SQL Editor para adicionar um comentário na coluna **st** da tabela **dim_loja** e explicar que ela contém essa informação
-    - `ALTER TABLE dim_loja ALTER COLUMN st COMMENT 'Nome da loja'`
+3. Mas caso a Genie não conseguiu associar a coluna correta, use o SQL Editor para adicionar um comentário na coluna **xpto** da tabela **dim_loja** e explicar que ela contém essa informação
+    - `ALTER TABLE dim_loja ALTER COLUMN xpto COMMENT 'Nome da loja'`
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_06.png"><br><br>
 
