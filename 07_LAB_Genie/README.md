@@ -53,7 +53,7 @@ Basta usar o chat para fazer as perguntas abaixo:
 - Qual o faturamento em out/22?
 - Agora, quebre por produto
 - Mantenha somente os 10 produtos com maior faturamento
-- Monte um gráfico de barras
+- Gostaria de obter o nome do produto invés do id
 - Qual o total de produtos vendidos em genéricos?
 - Qual o valor total vendido de ansiolíticos?
 - Quais produtos tiveram uma proporção de vendas por estoque maior que 0.8 em Outubro de 2022?
@@ -85,7 +85,10 @@ Vamos ver como funciona!
 1. Faça a seguinte pergunta:
     - Qual o valor total de venda por loja? Exiba o nome da loja
 
-2. Ops, parece que a Genie não conseguiu descobrir qual coluna contém o nome da loja. Use o SQL Editor para adicionar um comentário na coluna **st** da tabela **dim_loja** e explicar que ela contém essa informação
+2. Algumas vezes, mesmo com pouco contexto, a Genie consegue descobrir qual a coluna contém o nome da loja, a coluna `dim_loja.st`, é a coluna que contém o nome das lojas, caso o resultado obtido seja igual o da imagem abaixo, a Genie conseguiu descobrir corretamente. </br>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_resultado.png?raw=true">
+</br>
+3. Mas caso a Genie não conseguiu associar a coluna correta, use o SQL Editor para adicionar um comentário na coluna **st** da tabela **dim_loja** e explicar que ela contém essa informação
     - `ALTER TABLE dim_loja ALTER COLUMN st COMMENT 'Nome da loja'`
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_06.png"><br><br>
