@@ -153,7 +153,7 @@ Pronto! Agora a Genie já pode responder perguntas sobre prescrições também!
 
 </br></br>
 
-## Exercício 03.07 - Usando funções
+## Exercício 03.05 - Usando funções
 
 Outro recurso que podemos utilizar para ajudar a Genie com cálculos complexos são as funções!
 
