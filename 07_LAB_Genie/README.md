@@ -40,14 +40,14 @@ Vamos começar criando uma Genie para fazer nossas perguntas. Para isso, vamos s
 
 3. Altere o nome da sua Genie Space e seu espaço deve ficar assim:
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_4.png?raw=true"> </br>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_4.png?raw=true" width=500> </br>
 
 4. Clique em **Instructions** e atribua a seguinte instrução para que a resposta da Genie sejam em português
 
     ``` %md
     * responda em português (Brasil)
     ```
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_port.png?raw=true" width=300></br></br> 
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_port.png?raw=true" width=500></br></br> 
 </br></br>
 
 ## Exercício 03.02 - Fazendo perguntas ao AI/BI Genie
