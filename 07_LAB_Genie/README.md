@@ -40,7 +40,7 @@ Vamos começar criando uma Genie para fazer nossas perguntas. Para isso, vamos s
 
 3. Altere o nome da sua Genie Space e seu espaço deve ficar assim:
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_4.png?raw=true" width=500> </br>
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_4.png?raw=true" width=700> </br>
 
 4. Clique em **Instructions** e atribua a seguinte instrução para que a resposta da Genie sejam em português
 
