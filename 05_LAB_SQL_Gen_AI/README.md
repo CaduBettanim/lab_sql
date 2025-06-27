@@ -45,14 +45,14 @@ e depois criar uma nova coluna com a análise de sentimento da coluna de coment�
 
 ``` md
 WITH 
-sizing AS (SELECT * FROM dbacademy.gabriel_rangel.bronze_dim_medicamento LIMIT 10),
+sizing AS (SELECT * FROM dbacademy.gabriel_rangel.dim_medicamento LIMIT 10),
 comentarios AS (
     SELECT
     CASE
         WHEN rand() > 0.5 THEN
-        ai_gen(CONCAT('Write a positive comment about the medicine: ', nome_medicamento))
+        ai_gen(CONCAT('Write a positive comment about the medicine: ', nome_medicamento, '. comente em português'))
         ELSE
-        ai_gen(CONCAT('Write a negative comment about the medicine: ', nome_medicamento))
+        ai_gen(CONCAT('Write a negative comment about the medicine: ', nome_medicamento, '. comente em português'))
     END AS medicamento_review
     FROM sizing
 )

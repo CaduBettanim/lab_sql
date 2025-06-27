@@ -91,7 +91,8 @@ Selecione o nome da empresa, stock,
 mínimo valor de fechamento, máximo valor de fechamento
 e percentual de variação entre o mínimo e o máximo valor de fechamento
 da tabela stock_bigtech
-agrupando por empresa e stock
+agrupando por empresa e stock.
+Use a coluna company para achar o nome da empresa
 
 ```
 </br></br>

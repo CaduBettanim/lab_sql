@@ -40,8 +40,14 @@ Vamos começar criando uma Genie para fazer nossas perguntas. Para isso, vamos s
 
 3. Altere o nome da sua Genie Space e seu espaço deve ficar assim:
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_4.png?raw=true">
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_4.png?raw=true"> </br>
 
+4. Clique em **Instructions** e atribua a seguinte instrução para que a resposta da Genie sejam em português
+
+    ``` %md
+    * responda em português (Brasil)
+    ```
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_port.png?raw=true" width=300></br></br> 
 </br></br>
 
 ## Exercício 03.02 - Fazendo perguntas ao AI/BI Genie
@@ -72,7 +78,7 @@ Aproveitem para explorar e fazer perguntas adicionais!
 
 </br>
 
-## Exercício 03.03 - Usando comentários
+## Exercício 03.03 - Usando comentários e *constraints*
 
 Mesmo assim, podem ocorrer cenários onde precisaremos fornecer algum contexto adicional à Genie para obter respostas mais precisas.
 
@@ -80,55 +86,41 @@ Agora, vamos explorar algumas formas de auxiliar a Genie quando identificarmos a
 
 A primeira delas é documentar nossas tabelas. Todos os comentários que adicionamos às tabelas são utilizados pela Genie para entender melhor o que é aquele dado.
 
+Outra boa prática é adicionar *constraints* a tabela, ajudando a Genie a realizar a associação de maneira correta entre as tabelas
+
 Vamos ver como funciona!
 
 1. Faça a seguinte pergunta:
-    - ```%md 
-        Qual o valor total de venda por loja? Exiba o nome da loja
-        ```
+   ```%md 
+    Qual o valor total de venda por loja? Exiba o nome da loja
+    ```
 
-2. Algumas vezes, mesmo com pouco contexto, a Genie consegue descobrir qual a coluna contém o nome da loja, a coluna `dim_loja.xpto`, é a coluna que contém o nome das lojas, caso o resultado obtido seja igual o da imagem abaixo, a Genie conseguiu descobrir corretamente. 
-</br></br>
-    <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_resultado.png?raw=true" width=400>
-</br></br>
-3. Mas caso a Genie não conseguiu associar a coluna correta, use o SQL Editor para adicionar um comentário na coluna **xpto** da tabela **dim_loja** e explicar que ela contém essa informação
-    - ```%md
-        ALTER TABLE dim_loja ALTER COLUMN xpto COMMENT 'Nome da loja'
-        ```
+2. OPS ! Parece que a Genie não conseguiu realizar a consulta.
+
+3. A coluna **xpto** da tabela **dim_loja**  é a coluna que contém a informação de nome das lojas explicar que ela contém essa informação e a coluna **id_loja** da tabela **dim_loja** não é o melhor campo para fazer os cruzamentos com a tabela de vendas. Na verdade, a coluna correta é a **cod**!
+Vamos fazer essas correções rodando o seguinte comando no **SQL EDITOR**
+
+    ``` sql
+    ALTER TABLE dim_loja ALTER COLUMN xpto COMMENT 'Nome da loja';
+    ALTER TABLE dim_loja ALTER column cod SET NOT NULL;
+    ALTER TABLE dim_loja ADD CONSTRAINT pk_dim_loja PRIMARY KEY (cod);
+    ALTER TABLE vendas ADD CONSTRAINT fk_venda_dim_loja FOREIGN KEY (id_loja) REFERENCES dim_loja(cod);
+    ```
 </br>
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_06.png"><br><br>
 
 3. Faça novamente a pergunta anterior<br><br>
 
-Percebam que dessa vez a Genie utilizou a coluna correta que contém o nome da loja.
+Pronto! Com essas informação a Genie já consegue responder nossa pergunta corretamente!
 
-Documentar suas tabelas com comentários é sempre uma boa prática! Isso ajuda a compreensão, a descoberta e o reaproveitamento desses dados por outras pessoas. Além disso, vai acabar ajudando a melhorar as respostas da Genie.
-
-No entanto, nossa consulta ainda não retornou nenhum resultado. Vamos buscar uma solução!
-
+Documentar suas tabelas com comentários é sempre uma boa prática, bem como atribuir chaves primárias e estrangeiras!</br> 
+Isso ajuda a compreensão, a descoberta e o reaproveitamento desses dados por outras pessoas. Além disso, vai acabar ajudando a melhorar as respostas da Genie.
 </br></br>
 
-## Exercício 03.04 - Usando chaves primárias
 
-Aparentemente, a coluna **id_loja** da tabela **dim_loja** não é o melhor campo para fazer os cruzamentos com a tabela de vendas. Na verdade, a coluna correta é a **cod**!
 
-Vamos então adicionar chaves primárias e estrangeiras nessas tabelas para que a Genie não precise inferir como fazer esse cruzamento!
-
-1. Use o SQL Editor para adicionar as chaves primárias e estrangeiras nas tabelas `dim_loja` e `vendas`
-
-``` sql
-ALTER TABLE dim_loja ALTER column cod SET NOT NULL;
-ALTER TABLE dim_loja ADD CONSTRAINT pk_dim_loja PRIMARY KEY (cod);
-ALTER TABLE vendas ADD CONSTRAINT fk_venda_dim_loja FOREIGN KEY (id_loja) REFERENCES dim_loja(cod);
-```
-2. Faça novamente a pergunta anterior na Genie
-
-Pronto! Com essa informação a Genie já consegue responder nossa pergunta corretamente!
-
-</br></br>
-
-## Exercício 03.05 - Usando instruções
+## Exercício 03.04 - Usando instruções
 
 Como vimos, a Genie utiliza toda a documentação das nossas tabelas para conseguir responder nossas perguntas. No entanto, por motivos de segurança, ela não tem acesso aos dados em si!
 
@@ -143,43 +135,21 @@ Por isso, para complementar o conhecimento que a Genie já possui sobre nossas b
 Vamos ver como funciona:
 
 1. Faça a pergunta:
-    - Calcule a quantidade de itens vendidos para prescrição
+    ``` %md
+    Calcule a quantidade de itens vendidos para prescrição
+    ```
 
 2. Me parece que o resultado não está correto! Na nossa base, o termo prescrição realmente não é mencionado nenhuma vez. Mas acontece que aqui consideramos como medicamentos de prescrição aqueles que não são genéricos. Por isso, adicione a seguinte instrução:
-    - `* para calcular indicadores sobre prescrição use categoria_regulatoria <> 'GENÉRICO'`
-    - `* responda em português`
+    ``` %md
+    * para calcular indicadores sobre prescrição use   categoria_regulatoria <> 'GENÉRICO'
+    ```
 
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_07.png">
+
+<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_07.png"> </br>
 
 3. Faça novamente a pergunta anterior
 
 Pronto! Agora a Genie já pode responder perguntas sobre prescrições também!
-
-</br></br>
-
-## Exercício 03.06 - Usando exemplos de queries
-
-Em alguns casos, precisamos fazer cruzamentos e cálculos bastante complexos para conseguir responder às nossas perguntas e a Genie pode não entender como montar todo o racional necessário.
-
-Nesses casos, podemos fornecer exemplos de queries validadas e certificadas pelos times responsáveis. Este também é um mecanismo interessante para garantir a acurácia das respostas.
-
-Vamos ver como funciona:
-
-1. Faça a pergunta:
-    - Calcule a quantidade de itens vendidos por janela móvel de 3 meses 
-
-2. Aqui a Genie já até fez uma soma em janela móvel, porém não ficou exatamente do jeito que nós gostaríamos. Então, adicione um exemplo de query seguindo os passos abaixo:
-    - Clique em `SQL Queries`
-    - Depois clique em `Add`
-    - Insira a pergunta anterior no campo superior
-    - Insira a query abaixo no campo inferior
-        - `SELECT window.end AS dt_venda, SUM(vl_venda) FROM dbacademy.<seu_nome>.vendas GROUP BY WINDOW(dt_venda, '90 days', '1 day')`
-
-<img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_08.png">
-
-3. Faça novamente a pergunta anterior
-
-Notem que agora a Genie conseguiu responder corretamente a nossa pergunta!
 
 </br></br>
 
@@ -194,24 +164,26 @@ No nosso contexto, as funções também vão funcionar como ferramentas validade
 Vamos ver na prática:
 
 1. Faça a pergunta:
-    - Qual o lucro projetado do AAS?
+    ``` %md 
+    Qual o lucro projetado do AAS? 
+    ```
 
 2. Realmente, não temos informações suficientes na nossa base para responder à essa pergunta! Para isso, crie a função abaixo com a lógica do cálculo do lucro médio projetado de um produto rodando o exemplo abaixo no **SQL EDITOR**:
 
-``` sql
-CREATE OR REPLACE FUNCTION calc_lucro(medicamento STRING)
-  RETURNS TABLE(nome_medicamento STRING, lucro_projetado DOUBLE)
-  COMMENT 'Use esta função para calcular o lucro projetado de um medicamento'
-  RETURN 
-    SELECT
-      m.nome_medicamento,
-      sum(case when m.categoria_regulatoria == 'GENÉRICO' then 1 else 0.5 end * v.vl_venda) / sum(v.qt_venda) as lucro_projetado
-    FROM vendas v
-    LEFT JOIN dim_medicamento m
-    ON v.id_produto = m.id_produto
-    WHERE m.nome_medicamento = calc_lucro.medicamento
-    GROUP BY ALL
-```
+    ``` sql
+    CREATE OR REPLACE FUNCTION calc_lucro(medicamento STRING)
+    RETURNS TABLE(nome_medicamento STRING, lucro_projetado DOUBLE)
+    COMMENT 'Use esta função para calcular o lucro projetado de um medicamento'
+    RETURN 
+        SELECT
+        m.nome_medicamento,
+        sum(case when m.categoria_regulatoria == 'GENÉRICO' then 1 else 0.5 end * v.vl_venda) / sum(v.qt_venda) as lucro_projetado
+        FROM vendas v
+        LEFT JOIN dim_medicamento m
+        ON v.id_produto = m.id_produto
+        WHERE m.nome_medicamento = calc_lucro.medicamento
+        GROUP BY ALL
+    ```
 
 3. Adicione esta função a sua Genie, muito similar com o realizado no exercício anterior mais precisamos clicar no seta para baixo ao lado de `Add` e selecionar a opção `SQL function` </br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_9.png?raw=true">

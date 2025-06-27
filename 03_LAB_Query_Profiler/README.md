@@ -24,7 +24,7 @@ SELECT
   ve.id_loja AS id_loja,
   lo.cod AS codigo_loja,
   lo.varejista AS varejista,
-  lo.nlj AS nome_da_loja,
+  lo.xpto AS nome_da_loja,
   lo.tipo AS tipo_de_loja,
   lo.cep AS cep,
   lo.lat_long AS lat_long,
