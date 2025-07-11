@@ -45,7 +45,7 @@ e depois criar uma nova coluna com a an√°lise de sentimento da coluna de coment√
 
 ``` md
 WITH 
-sizing AS (SELECT * FROM dbacademy.gabriel_rangel.dim_medicamento LIMIT 10),
+sizing AS (SELECT * FROM dbacademy.<seu_database>.dim_medicamento LIMIT 10),
 comentarios AS (
     SELECT
     CASE
