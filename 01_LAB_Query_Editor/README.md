@@ -34,17 +34,17 @@ Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor*
 ## Exercício 01.01 - Criação do catálago e database
 
 ``` sql
-GRANT CREATE CATALOG ON METASTORE TO `account users`;
-CREATE CATALOG IF NOT EXISTS dbacademy;
-USE CATALOG dbacademy;
+#GRANT CREATE CATALOG ON METASTORE TO `account users`;
+#CREATE CATALOG IF NOT EXISTS dbacademy;
+USE CATALOG <nome_catalogo>;
 
-CREATE DATABASE IF NOT EXISTS <seu_nome>;
-USE <seu_nome>;
+CREATE DATABASE IF NOT EXISTS <seu_usuario>;
+USE <seu_usuario>;
 ```
 
 ## Exercício 01.02 - Criação da Tabela
-1. Na primeira query do laboratório realizamos a criação de catálago e database w utilizamos a cláusula *USE*, mas ela só é persistida em tempo de execução;
-2. Devemos sempre atribuir o nome do catálago e database antes do nome da tabela separado por "." (dbacademy.<seu_nome>.porte_empresa)</br>
+1. Na primeira query do laboratório realizamos a criação de catálago e database e utilizamos a cláusula *USE*, mas ela só é persistida em tempo de execução;
+2. Devemos sempre atribuir o nome do catálago e database antes do nome da tabela separado por "." (catalogo.<seu_usuario>.porte_empresa)</br>
 ou podemos especificar o catálago e database que queremos usar no próprio editor conforme imagem abaixo:
 </br></br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_setcatalago.png?raw=true">
