@@ -26,7 +26,7 @@ Na janela de importação, clique na opção "**URL**".
 No campo texto da URL, digite o endereço do LINK destacado abaixo:
 
 ``` html
-https://github.com/Gabriel-Rangel/lab_sql/blob/main/02_LAB_Notebook/lab02_01_carga_csv.ipynb
+https://github.com/CaduBettanim/lab_sql/blob/main/02_LAB_Notebook/lab02_01_carga_csv.ipynb
 ```
 Conforme a figura abaixo:
 </br></br>
