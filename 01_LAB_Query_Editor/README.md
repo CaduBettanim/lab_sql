@@ -34,8 +34,8 @@ Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor*
 ## Exercício 01.01 - Criação do catálago e database
 
 ``` sql
-#GRANT CREATE CATALOG ON METASTORE TO `account users`;
-#CREATE CATALOG IF NOT EXISTS dbacademy;
+--GRANT CREATE CATALOG ON METASTORE TO `account users`;
+--CREATE CATALOG IF NOT EXISTS dbacademy;
 USE CATALOG dbacademy;
 
 CREATE DATABASE IF NOT EXISTS <seu_usuario>;
