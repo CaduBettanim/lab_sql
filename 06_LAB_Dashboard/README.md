@@ -111,7 +111,7 @@ SELECT
   MIN(close) AS min_close,
   MAX(close) AS max_close,
   ((MAX(close) - MIN(close)) / MIN(close) * 100) AS percentual_variacao
-FROM dbacademy.gabriel_rangel.stock_bigtech
+FROM dbacademy.<seu_database>.stock_bigtech
 GROUP BY company, stock;
 
 ```
