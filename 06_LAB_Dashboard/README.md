@@ -26,7 +26,7 @@ Escolha a opção *"Add data source"*
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_5.png?raw=true" style="height: 300px;">
 
-Digite a palavra de busca **"stock_bigtech"** escolha a tabela e depois volte para área do **CANVAS**
+Digite a palavra de busca **"<seu_database>.stock_bigtech"** escolha a tabela e depois volte para área do **CANVAS**
 
 Clique no menu suspenso, para adicionar uma nova visualização.  </br>
 Selecione com o mouse a área onde vai ficar o gráfico.
