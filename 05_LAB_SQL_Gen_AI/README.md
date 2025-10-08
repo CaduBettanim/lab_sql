@@ -55,6 +55,14 @@ SELECT principio_ativo
  ;
 ```
 
+**ai_analyze_sentiment**.
+
+``` md
+SELECT ai_extract(
+    'Envie um email para jane.doe@example.com sobre a reunião que marcamos as 10am.',
+    array('email', 'time')
+  );
+```
 
 **ai_analyze_sentiment**.
 
