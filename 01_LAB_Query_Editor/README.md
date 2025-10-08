@@ -57,7 +57,7 @@ CREATE OR REPLACE TABLE porte_empresa
   ( id_natureza_juridica    INT     COMMENT "codigo do porte da empresa",
     sig_natureza_juridica   STRING  COMMENT "sigla que representa a natureza juridica da empresa",
     desc_natureza_juridica  STRING  COMMENT "descricao da natura juridica" )
-COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas"
+COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas";
 ```
 </br>
 
@@ -78,7 +78,7 @@ COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas"
  ``` sql
 SELECT * 
 FROM porte_empresa 
-ORDER BY id_natureza_juridica
+ORDER BY id_natureza_juridica;
 ```
 
  ## Exercício 01.05 - Alterando o conteúdo da TABELA
@@ -92,7 +92,7 @@ WHERE id_natureza_juridica = 7;
 ``` sql
 SELECT * 
 FROM porte_empresa
-WHERE id_natureza_juridica = 7
+WHERE id_natureza_juridica = 7;
 ```
 
 ``` sql
@@ -102,7 +102,7 @@ WHERE id_natureza_juridica = 7;
 ```
 
 ``` sql
-SELECT * FROM porte_empresa
+SELECT * FROM porte_empresa;
 ```
 
 ## Exerício 01.06 - Liquid Clustering
@@ -125,8 +125,14 @@ CLUSTER BY (<clustering_columns>)
 Além disso podemos deixar a própria Plataforma de dados inteligente da databricks definir quais são as melhores colunas da nossa tabela para serem definidas como *clustering*.</br>
 <span style="color:green"> **VAMOS EXECUTAR ESSE EXEMPLO** </span>
 ```sql
+# captura informacoes antes de ativar o recurso
+DESC EXTENDED porte_empresa;
+
 ALTER TABLE porte_empresa
-CLUSTER BY AUTO
+CLUSTER BY AUTO;
+
+# captura informacoes depois de ativar o recurso
+DESC EXTENDED porte_empresa;
 ```
 #### Referências:
 * [Databricks Liquid Clustering](https://docs.databricks.com/aws/pt/delta/clustering)
@@ -135,29 +141,29 @@ CLUSTER BY AUTO
 ## Exercício 01.07 - Visualizando o Histórico de Atualizações da tabela
 
  ``` sql
-DESCRIBE HISTORY porte_empresa 
+DESCRIBE HISTORY porte_empresa ;
 ```
 
 ## Exercício 01.08 - Visualizando o conteúdo da tabela na versão anterior (TIME TRAVEL)
 
  ``` sql
-SELECT * FROM porte_empresa VERSION AS OF 7
+SELECT * FROM porte_empresa VERSION AS OF 7;
 ```
 
 ## Exercício 01.09 - RESTAURANDO o conteúdo da tabela na versão anterior (TIME TRAVEL)
 
  ``` sql
-RESTORE TABLE porte_empresa TO VERSION AS OF 7
+RESTORE TABLE porte_empresa TO VERSION AS OF 7;
 ```
 
 ## Exercício 01.10 - Visualizando as propriedades da Tabela
 
  ``` sql
-DESCRIBE DETAIL porte_empresa 
+DESCRIBE DETAIL porte_empresa ;
 ```
 
 ## Exercício 01.11 - Visualizando as informações DETALHADAS da Tabela
 
  ``` sql
-DESCRIBE TABLE EXTENDED porte_empresa
+DESCRIBE TABLE EXTENDED porte_empresa;
 ```
