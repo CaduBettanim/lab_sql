@@ -74,6 +74,11 @@ comentarios AS (
     ai_analyze_sentiment(medicamento_review) AS sentimento_review
     FROM comentarios;
 ```
+**ai_fix_grammar**.
+
+``` md
+SELECT ai_fix_grammar('Nóis tá com fome. Bora fazer um break e comer um pão de queijo minero dos bão?');
+```
 
 </br></br>
 </br></br>
