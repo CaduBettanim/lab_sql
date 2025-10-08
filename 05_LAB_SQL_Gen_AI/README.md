@@ -33,7 +33,7 @@ Existem funções nativas para executar tarefas pré-definidas ou enviar qualque
 </br></br>
 Para esse exercício, vamos explorar as funcionalidades citadas,  conforme exemplo abaixo:
 
-
+**ai_translate**
 ``` md
 SELECT texto as original, 
        ai_translate(texto, 'br') as traducao
@@ -42,9 +42,27 @@ SELECT texto as original,
 ```
 </br>
 
+**ai_extract**
+
+``` md
+SELECT ai_extract(
+    'Envie um email para jane.doe@example.com sobre a reunião que marcamos as 10am.',
+    array('email', 'time')
+  );
+```
+
+**ai_extract**.
+``` md
+
+SELECT ai_mask(
+    'Me chamo Flavio Da Silva. Entre em contato comigo no 555-1234 ou nos visete na Av.Paulista, 1000',
+    array('phone', 'address')
+);
+
 Agora vamos pegar nossa tabela de medicamentos,</br> 
 criar uma nova coluna atribuindo comentários a cada medicamento de forma aleatória  usando a função **ai_gen** </br>
 e depois criar uma nova coluna com a análise de sentimento da coluna de comentários usando a função 
+```
 
 **ai_gen**
 ``` md
@@ -53,15 +71,6 @@ SELECT principio_ativo
   FROM dbacademy.<seu_database>.dim_medicamento 
  LIMIT 10
  ;
-```
-
-**ai_analyze_sentiment**.
-
-``` md
-SELECT ai_extract(
-    'Envie um email para jane.doe@example.com sobre a reunião que marcamos as 10am.',
-    array('email', 'time')
-  );
 ```
 
 **ai_analyze_sentiment**.
