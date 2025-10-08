@@ -51,18 +51,19 @@ SELECT ai_extract(
   );
 ```
 
-**ai_extract**.
+**ai_mask**.
 ``` md
 
 SELECT ai_mask(
     'Me chamo Flavio Da Silva. Entre em contato comigo no 555-1234 ou nos visete na Av.Paulista, 1000',
     array('phone', 'address')
 );
+```
 
 Agora vamos pegar nossa tabela de medicamentos,</br> 
 criar uma nova coluna atribuindo comentários a cada medicamento de forma aleatória  usando a função **ai_gen** </br>
 e depois criar uma nova coluna com a análise de sentimento da coluna de comentários usando a função 
-```
+
 
 **ai_gen**
 ``` md
