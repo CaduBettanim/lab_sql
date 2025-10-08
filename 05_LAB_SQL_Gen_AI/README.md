@@ -35,7 +35,10 @@ Para esse exercício, vamos explorar as funcionalidades citadas,  conforme exemp
 
 
 ``` md
-SELECT ai_translate('Hello, how are you?', 'br') as traducao;
+SELECT texto as original, 
+       ai_translate(texto, 'br') as traducao
+  FROM (select 'Hello, how are you?' as texto)
+;
 ```
 </br>
 
