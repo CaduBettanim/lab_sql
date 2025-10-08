@@ -44,7 +44,19 @@ SELECT texto as original,
 
 Agora vamos pegar nossa tabela de medicamentos,</br> 
 criar uma nova coluna atribuindo comentários a cada medicamento de forma aleatória  usando a função **ai_gen** </br>
-e depois criar uma nova coluna com a análise de sentimento da coluna de comentários usando a função **ai_analyze_sentiment**.
+e depois criar uma nova coluna com a análise de sentimento da coluna de comentários usando a função 
+
+**ai_gen**
+``` md
+SELECT principio_ativo
+     , ai_gen(concat('forneça mais detalhes de como o medicamento ',principio_ativo,' atua no organismo de uma pessoa adulta. Forneça um texto de até 50 palavras')) 
+  FROM dbacademy.<seu_database>.dim_medicamento 
+ LIMIT 10
+ ;
+```
+
+
+**ai_analyze_sentiment**.
 
 ``` md
 WITH 
@@ -52,17 +64,15 @@ sizing AS (SELECT * FROM dbacademy.<seu_database>.dim_medicamento LIMIT 10),
 comentarios AS (
     SELECT
     CASE
-        WHEN rand() > 0.5 THEN
-        ai_gen(CONCAT('Write a positive comment about the medicine: ', nome_medicamento, '. comente em português'))
-        ELSE
-        ai_gen(CONCAT('Write a negative comment about the medicine: ', nome_medicamento, '. comente em português'))
+            WHEN rand() > 0.5 THEN ai_gen(CONCAT('Escreva em português um comentário positivo sobre o medicamento: ', nome_medicamento))
+            ELSE ai_gen(CONCAT('Invente em português um comentário negativo sobre o medicamento', nome_medicamento,'. Esse medicamento nao existe. seja criativo'))
     END AS medicamento_review
     FROM sizing
 )
     SELECT
     *,
     ai_analyze_sentiment(medicamento_review) AS sentimento_review
-    FROM comentarios
+    FROM comentarios;
 ```
 
 </br></br>
