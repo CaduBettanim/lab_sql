@@ -56,8 +56,8 @@ Escolha o atributo (Field):  "**company**"
 
 ## Exercício 02.04 - Alterando o título do painel por uma imagem
 
-No box de texto do títudo do painel, apague o texto anterior, </br>
-e substitua pelo código (markdown) abaixo: </br>
+Crie agora um novo objeto do tipo TEXT. No box que foi criado </br>
+insira o código (markdown) abaixo: </br>
 </br>
 
 ``` sql
@@ -86,14 +86,12 @@ selecione o Catálogo e o Schema na barra superior do Editor de Query,</br>
 e escreva o texto abaixo:</br>
 
 ``` 
-
 Selecione o nome da empresa, stock,
 mínimo valor de fechamento, máximo valor de fechamento
 e percentual de variação entre o mínimo e o máximo valor de fechamento
-da tabela stock_bigtech
+da tabela dbacademy.<seu_nome>.stock_bigtech
 agrupando por empresa e stock.
 Use a coluna company para achar o nome da empresa
-
 ```
 </br></br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_09.png" width="700px">
