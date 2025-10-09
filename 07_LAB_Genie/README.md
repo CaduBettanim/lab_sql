@@ -175,14 +175,14 @@ Vamos ver na prática:
     RETURNS TABLE(nome_medicamento STRING, lucro_projetado DOUBLE)
     COMMENT 'Use esta função para calcular o lucro projetado de um medicamento'
     RETURN 
-        SELECT
-        m.nome_medicamento,
-        sum(case when m.categoria_regulatoria == 'GENÉRICO' then 1 else 0.5 end * v.vl_venda) / sum(v.qt_venda) as lucro_projetado
-        FROM vendas v
-        LEFT JOIN dim_medicamento m
-        ON v.id_produto = m.id_produto
-        WHERE m.nome_medicamento = calc_lucro.medicamento
-        GROUP BY ALL
+    SELECT
+    m.nome_medicamento,
+    sum(case when m.categoria_regulatoria == 'GENÉRICO' then 1 else 0.5 end * v.vl_venda) / sum(v.qt_venda) as lucro_projetado
+    FROM vendas v
+    LEFT JOIN dim_medicamento m
+    ON v.id_produto = m.id_produto
+    WHERE m.nome_medicamento = trim(upper(calc_lucro.medicamento))
+    GROUP BY ALL
     ```
 
 3. Adicione esta função a sua Genie, muito similar com o realizado no exercício anterior mais precisamos clicar no seta para baixo ao lado de `Add` e selecionar a opção `SQL function` </br>
