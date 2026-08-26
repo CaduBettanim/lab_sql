@@ -26,6 +26,17 @@ A Free Edition oferece um site Databricks workspace fácil de usar, onde é poss
 
 **Crie sua conta [aqui](https://login.databricks.com/?dbx_source=docs&intent=SIGN_UP&tuuid=6a4ffcf3-cc8e-4bf6-885e-1e7824086e47&rl_aid=85dd1431-2778-4946-9d43-5dd210e5c552&provider=DB_FREE_TIER)**
 
+## Preparação do ambiente (instrutor/admin)
+
+O administrador executa **`workshop_prep_checker`** (idempotente, requer admin de conta) para
+provisionar e validar o ambiente: grupo `dbacademy_workshop` com os participantes e direitos de
+acesso, catálogo `dbacademy`, SQL Warehouse, cluster multiuso e as concessões, além de testar o
+acesso à internet da computação. Exibe uma matriz por participante e um Relatório final.
+
+**Uso:** rode as **duas primeiras células** para exibir os widgets, selecione os participantes e
+os alternadores, e use Run all. Para limpar ao fim, rode **`workshop_teardown`** (o `DROP CATALOG`
+vem desativado por padrão).
+
 ## Webinar - Vídeo Youtube
 
 <a href="https://www.youtube.com/watch?v=5AlU1wPr4f0"><img src="https://raw.githubusercontent.com/Databricks-BR/dw/main/images/webinar.png" style="width: 600px;"></a>
