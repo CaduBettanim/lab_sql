@@ -49,8 +49,11 @@ _user_choices = sorted({u.user_name for u in w.users.list(attributes="userName")
 _attendee_opts = [_PICK_ATT] + _user_choices
 
 print(f"Encontrados {len(_user_choices)} usuário(s) do workspace para o seletor de participantes.")
-if len(_attendee_opts) > 1024:
-    print("⚠️  >1024 usuários; o multisseletor pode ser truncado. Considere usar um workspace ou grupo menor.")
+
+more_than_1024_users = len(_attendee_opts) > 1024
+
+if more_than_1024_users:
+    print("⚠️  Esse workspace possui mais usuários do que o suportado pelo widget multisseletor. Será necessário preencher a lista de participantes manualmente na célula a seguir.")
 
 # COMMAND ----------
 
@@ -60,7 +63,14 @@ if len(_attendee_opts) > 1024:
 dbutils.widgets.dropdown("create_catalog", "true", ["true", "false"], "1. Criar Catálogo")
 dbutils.widgets.dropdown("create_warehouse", "true", ["true", "false"], "2. Criar SQL Warehouse")
 dbutils.widgets.dropdown("create_cluster", "true", ["true", "false"], "3. Criar Cluster Multiuso")
-dbutils.widgets.multiselect("attendees", _PICK_ATT, _attendee_opts, "4. Participantes (usuários do workspace)")
+if not more_than_1024_users:
+    dbutils.widgets.multiselect("attendees", _PICK_ATT, _attendee_opts, "4. Participantes (usuários do workspace)")
+
+else:
+    attendees_manual = [
+        # preencha essa lista com os emails dos participantes apenas se indicado na célula acima
+    ]
+
 
 # COMMAND ----------
 
@@ -80,8 +90,7 @@ CLUSTER_NAME = "dbacademy_workshop_cluster"
 CREATE_CATALOG = dbutils.widgets.get("create_catalog") == "true"
 CREATE_WAREHOUSE = dbutils.widgets.get("create_warehouse") == "true"
 CREATE_CLUSTER = dbutils.widgets.get("create_cluster") == "true"
-ATTENDEES = [a.strip() for a in dbutils.widgets.get("attendees").split(",")
-             if a.strip() and a.strip() != _PICK_ATT]
+ATTENDEES = [a.strip() for a in dbutils.widgets.get("attendees").split(",") if a.strip() and a.strip() != _PICK_ATT] if not more_than_1024_users else attendees_manual
 
 if not ATTENDEES:
     dbutils.notebook.exit("⏳ Escolha pelo menos um participante acima e execute a célula 'Run all'.")
