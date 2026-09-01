@@ -27,25 +27,8 @@ A Free Edition oferece um site Databricks workspace fácil de usar, onde é poss
 **Crie sua conta [aqui](https://login.databricks.com/?dbx_source=docs&intent=SIGN_UP&tuuid=6a4ffcf3-cc8e-4bf6-885e-1e7824086e47&rl_aid=85dd1431-2778-4946-9d43-5dd210e5c552&provider=DB_FREE_TIER)**
 
 ## Preparação do ambiente (instrutor/admin)
+Esse repositório conta com notebooks auxiliares para a preparação do ambiente para o workshop, você pode encontrá-los [nesse subdiretório](./preparation_and_teardown)
 
-Este lab inclui dois notebooks auxiliares: **`workshop_prep_checker`** cuida da preparação
-do ambiente e da checagem dos requisitos, e **`workshop_teardown`** remove os recursos
-criados para o workshop.
-
-O **`workshop_prep_checker`** é idempotente (seguro re-executar) e requer **admin de conta**.
-
-**Passos:**
-
-1. Abra o notebook e rode as **duas primeiras células** para exibir os widgets.
-2. Selecione os **participantes** e ajuste os alternadores.
-3. Clique em **Run all** — todas as células devem terminar com sucesso.
-4. Confira o veredito na seção **5. Relatório final**. O esperado é
-   `✅ CHECKS COMPLETOS`. Se houver ❌ ou ⚠️, corrija e re-execute o notebook inteiro.
-
-Ele cria: grupo `dbacademy_workshop` (participantes + acessos), catálogo `dbacademy`,
-SQL Warehouse, cluster multiuso e as concessões; e testa o acesso à internet.
-
-Após o workshop, rode **`workshop_teardown`** para limpar (o `DROP CATALOG` vem desativado).
 
 ## Webinar - Vídeo Youtube
 
